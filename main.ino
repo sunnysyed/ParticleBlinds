@@ -121,17 +121,12 @@ void loop()
 }
 
 // We're going to have a super cool function now that gets called when a matching API request is sent
-// This is the ledToggle function we registered to the "led" Spark.function earlier.
+// This is the blinds function we registered to the "blinds" Spark.function earlier.
+// used to set new desired position for blinds
 
 
 int blinds(String i) {
-    /* Spark.functions always take a string as an argument and return an integer.
-    Since we can pass a string, it means that we can give the program commands on how the function should be used.
-    In this case, telling the function "on" will turn the LED on and telling it "off" will turn the LED off.
-    Then, the function returns a value to us to let us know what happened.
-    In this case, it will return 1 for the LEDs turning on, 0 for the LEDs turning off,
-    and -1 if we received a totally bogus command that didn't do anything to the LEDs.
-    */
+    //TODO change input to percent instead of position so it can be controlled through Echo
     int temp = atoi(i.c_str());
     if (temp > 60){
         newPos = 60;
